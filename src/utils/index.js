@@ -4,7 +4,7 @@ const { title } = require("process");
 exports.add = (movieList, title, rating) => {
   if (title !== undefined) {
     if (rating === undefined) {
-      rating = "";
+      rating = "unrated";
     }
     const result = movieList.find(({ Title }) => Title === title);
     let index = movieList.findIndex((element) => element === result);
@@ -35,11 +35,13 @@ exports.remove = (movieList, imput1) => {
   }
 };
 
-exports.read = (movieList) => {
+exports.read = (movieList,input1,input2) => {
+  if(input2 !== undefined){ } else if(input1 !== undefined){} else{
+
   console.log("The movie list consists of:");
   movieList.map((item) => {
     console.log(`${item.Title}:${item.Rating}`);
-  });
+  });}
 };
 
 exports.update = (movieList, title, newTitle, newRating) => {
